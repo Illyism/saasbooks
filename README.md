@@ -17,11 +17,11 @@ SaaSBooks connects directly to your Stripe and Mercury accounts to:
 
 ## Why Open Source?
 
-We believe financial tools should be:
+SaaSBooks is 100% free and open source. We believe financial tools should be:
 
 1. **Transparent** - You should know exactly how your financial data is processed
 2. **Customizable** - Every SaaS business has unique needs
-3. **Affordable** - Financial clarity shouldn't cost $300/month
+3. **Accessible** - Financial clarity should be available to all SaaS businesses, not just those who can afford $300/month tools
 
 ## Supporting SaaSBooks
 
@@ -30,6 +30,10 @@ This project is sponsored by the community. If you find it valuable:
 - **GitHub Sponsors** - Support ongoing development
 - **Share with other founders** - Help us grow
 - **Contribute code or documentation** - PRs welcome!
+
+## Help Improve Our Data Categorization
+
+We need anonymized Stripe/Mercury exports to improve our auto-categorization system. [Learn how to contribute data safely](https://github.com/Illyism/saasbooks/issues/1).
 
 ## Need More Advanced Accounting?
 
