@@ -15,6 +15,67 @@ SaaSBooks connects directly to your Stripe and Mercury accounts to:
 - **Prepare exports** for your accountant or tax software
 - **Store everything locally** as simple JSON files you can version control
 
+## Setup
+
+### 1. Local Development
+
+```bash
+# Install dependencies
+bun install
+
+# Copy environment variables
+cp .env.example .env
+
+# Push database schema
+bunx prisma db push
+
+# Start development server
+bun dev
+```
+
+### 2. Google Drive Integration
+
+SaaSBooks uses Google Drive to store your uploaded files (invoices, receipts, CSV exports). Here's how to set it up:
+
+1. **Create a Google Cloud Project**
+
+   - Go to [Google Cloud Console](https://console.cloud.google.com)
+   - Create a new project or select an existing one
+   - Enable the [Google Drive API](https://console.cloud.google.com/marketplace/product/google/drive.googleapis.com) for your project
+
+2. **Create OAuth Credentials**
+
+   - Go to "[Credentials](https://console.cloud.google.com/auth/overview)" in API & Services
+   - Click **"Create OAuth client"**
+   - Choose **"Web application"**
+   - Add Authorized JavaScript origins:
+     - Development: `http://localhost:3000`
+     - Production: `https://saasbooks.org`
+   - Add authorized redirect URI:
+     - Development: `http://localhost:3000/auth/google/callback`
+     - Production: `https://saasbooks.org/auth/google/callback`
+   - Save your Client ID and Client Secret
+   - Go to "[Scopes](https://console.cloud.google.com/auth/scopes)" in API & Services
+   - Click "ADD OR REMOVE SCOPES"
+   - Add the following scopes:
+     - `https://www.googleapis.com/auth/drive.file` (Allows access to files and folders created by the app)
+
+3. **Update Environment Variables**
+
+```bash
+# In your .env file
+GOOGLE_CLIENT_ID="your-client-id"
+GOOGLE_CLIENT_SECRET="your-client-secret"
+GOOGLE_REDIRECT_URI="http://localhost:3000/auth/google/callback"
+```
+
+When users connect their Google Drive:
+
+1. They'll be prompted to sign in with Google
+2. They'll need to authorize the app
+3. A dedicated folder will be created in their Drive
+4. All uploads will be stored in this folder
+
 ## Why Open Source?
 
 SaaSBooks is 100% free and open source. We believe financial tools should be:
@@ -44,7 +105,7 @@ When you're ready for formal accounting software, we recommend:
 - [QuickBooks Online](https://go.il.ly/quickbooks) - Best for US-based businesses
 - [Xero](https://go.il.ly/xero) - Great international support
 
-*Note: These are affiliate links that help support SaaSBooks development.*
+_Note: These are affiliate links that help support SaaSBooks development._
 
 ## License
 

@@ -1,31 +1,25 @@
 'use client';
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
-export default function LogoutButton({ className = '' }: { className?: string }) {
+export default function LogoutButton({
+  className = '',
+}: {
+  className?: string;
+}) {
   const router = useRouter();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   async function handleLogout() {
     setIsLoggingOut(true);
-    
+
     try {
-      const response = await fetch('/api/auth/logout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to logout');
-      }
-
-      // Redirect to login page
-      router.push('/login');
+      // Redirect to the logout route, which handles the session cleanup
+      router.push('/auth/logout');
       router.refresh();
     } catch (error) {
       console.error('Logout error:', error);
-    } finally {
       setIsLoggingOut(false);
     }
   }
@@ -35,9 +29,9 @@ export default function LogoutButton({ className = '' }: { className?: string })
       type="button"
       onClick={handleLogout}
       disabled={isLoggingOut}
-      className={`text-sm font-medium px-4 py-2 rounded bg-red-500 text-white hover:bg-red-600 disabled:bg-red-300 ${className}`}
+      className={`rounded bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600 disabled:bg-red-300 ${className}`}
     >
       {isLoggingOut ? 'Logging out...' : 'Sign out'}
     </button>
   );
-} 
+}
