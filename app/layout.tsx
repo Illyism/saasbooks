@@ -1,15 +1,21 @@
+import NavBar from '@/components/nav/NavBar';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
-import NavBar from '../components/nav/NavBar';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SaaSBooks - Financial Insights for SaaS',
+  title: 'SaaSBooks - Financial clarity for SaaS businesses',
   description:
-    'Turn your Stripe and Mercury data into actionable financial insights without the accounting headache.',
+    'SaaSBooks turns your Stripe and Mercury data into actionable financial insights.',
 };
+
+// Load Poppins font
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -17,10 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${poppins.variable}`}>
+      <body className="bg-background min-h-screen font-sans antialiased">
         <NavBar />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
