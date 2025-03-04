@@ -1,10 +1,23 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { ArrowRight, Cloud, Github, Key, Phone, Rocket, X } from 'lucide-react';
 import Link from 'next/link';
 
@@ -157,7 +170,9 @@ export default function DesignSystem() {
           <Card className="space-y-8">
             <CardHeader>
               <CardTitle>Button Components</CardTitle>
-              <CardDescription>All available button variants and sizes</CardDescription>
+              <CardDescription>
+                All available button variants and sizes
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-8">
               <div>
@@ -224,12 +239,14 @@ export default function DesignSystem() {
                 </div>
                 <CardTitle>Feature Card</CardTitle>
                 <CardDescription className="text-gray-600">
-                  This card style is used to highlight key features of the product.
+                  This card style is used to highlight key features of the
+                  product.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  With additional content that can provide more details about the feature.
+                  With additional content that can provide more details about
+                  the feature.
                 </p>
               </CardContent>
               <CardFooter>
@@ -252,7 +269,8 @@ export default function DesignSystem() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  The shadcn Card component provides a consistent and stylish way to display content.
+                  The shadcn Card component provides a consistent and stylish
+                  way to display content.
                 </p>
               </CardContent>
               <CardFooter>
@@ -273,7 +291,8 @@ export default function DesignSystem() {
                   For special emphasis and important calls to action
                 </p>
                 <p>
-                  A vibrant gradient card for highlighting important information and primary actions.
+                  A vibrant gradient card for highlighting important information
+                  and primary actions.
                 </p>
                 <div className="mt-auto pt-4">
                   <Button variant="black" className="w-full font-medium">
@@ -291,7 +310,9 @@ export default function DesignSystem() {
           <Card>
             <CardHeader>
               <CardTitle>Badge Variants</CardTitle>
-              <CardDescription>Available badge styles and colors</CardDescription>
+              <CardDescription>
+                Available badge styles and colors
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-4">
@@ -360,7 +381,9 @@ export default function DesignSystem() {
           <Card>
             <CardHeader>
               <CardTitle>Lucide Icons</CardTitle>
-              <CardDescription>Common icons used throughout the application</CardDescription>
+              <CardDescription>
+                Common icons used throughout the application
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
@@ -413,14 +436,19 @@ export default function DesignSystem() {
           <Card>
             <CardHeader>
               <CardTitle>Apple-Inspired Input Components</CardTitle>
-              <CardDescription>Minimalist form controls with Apple-like aesthetics</CardDescription>
+              <CardDescription>
+                Minimalist form controls with Apple-like aesthetics
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-8 md:grid-cols-2">
                 <div className="space-y-6">
                   {/* Apple-style text input */}
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-semibold text-gray-700"
+                    >
                       Email
                     </label>
                     <div className="relative">
@@ -431,12 +459,17 @@ export default function DesignSystem() {
                         className="rounded-lg border border-gray-300 bg-gray-50/50 px-4 py-3 text-base shadow-sm backdrop-blur-sm transition-all focus:border-gray-400 focus:bg-white focus:ring-0 focus:ring-offset-0"
                       />
                     </div>
-                    <p className="text-xs text-gray-500">We'll never share your email</p>
+                    <p className="text-xs text-gray-500">
+                      We'll never share your email
+                    </p>
                   </div>
-                  
+
                   {/* Apple-style password input */}
                   <div className="space-y-2">
-                    <label htmlFor="password" className="text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="password"
+                      className="text-sm font-semibold text-gray-700"
+                    >
                       Password
                     </label>
                     <div className="relative">
@@ -448,28 +481,36 @@ export default function DesignSystem() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Apple-style toggle switch */}
                   <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4">
                     <div>
                       <p className="font-medium">Remember me</p>
-                      <p className="text-xs text-gray-500">Stay signed in on this device</p>
+                      <p className="text-xs text-gray-500">
+                        Stay signed in on this device
+                      </p>
                     </div>
-                    <label htmlFor="toggle" className="relative inline-flex cursor-pointer items-center">
-                      <input 
-                        type="checkbox" 
-                        id="toggle" 
-                        className="peer sr-only" 
+                    <label
+                      htmlFor="toggle"
+                      className="relative inline-flex cursor-pointer items-center"
+                    >
+                      <input
+                        type="checkbox"
+                        id="toggle"
+                        className="peer sr-only"
                       />
                       <div className="h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-500 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"></div>
                     </label>
                   </div>
                 </div>
-                
+
                 <div className="space-y-6">
                   {/* Apple-style textarea */}
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-semibold text-gray-700"
+                    >
                       Message
                     </label>
                     <Textarea
@@ -478,10 +519,13 @@ export default function DesignSystem() {
                       className="min-h-[120px] resize-none rounded-lg border border-gray-300 bg-gray-50/50 px-4 py-3 text-base shadow-sm backdrop-blur-sm transition-all focus:border-gray-400 focus:bg-white focus:ring-0 focus:ring-offset-0"
                     />
                   </div>
-                  
+
                   {/* Apple-style select */}
                   <div className="space-y-2">
-                    <label htmlFor="select" className="text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="select"
+                      className="text-sm font-semibold text-gray-700"
+                    >
                       Select Option
                     </label>
                     <Select defaultValue="option1">
@@ -495,16 +539,28 @@ export default function DesignSystem() {
                       </SelectContent>
                     </Select>
                   </div>
-                  
+
                   {/* Apple-style search input */}
                   <div className="space-y-2">
-                    <label htmlFor="search" className="text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="search"
+                      className="text-sm font-semibold text-gray-700"
+                    >
                       Search
                     </label>
                     <div className="relative">
                       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                        <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clipRule="evenodd" />
+                        <svg
+                          className="h-5 w-5 text-gray-400"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
                       <Input
@@ -515,7 +571,7 @@ export default function DesignSystem() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Apple-style segmented control */}
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">
@@ -523,19 +579,35 @@ export default function DesignSystem() {
                     </label>
                     <div className="inline-flex w-full overflow-hidden rounded-lg border border-gray-300 bg-gray-50/50 p-0.5 text-sm font-medium shadow-sm">
                       <label className="relative w-1/3 cursor-pointer">
-                        <input type="radio" name="view" value="list" className="peer sr-only" defaultChecked />
+                        <input
+                          type="radio"
+                          name="view"
+                          value="list"
+                          className="peer sr-only"
+                          defaultChecked
+                        />
                         <span className="flex justify-center rounded-md py-2 peer-checked:bg-white peer-checked:text-gray-900 peer-checked:shadow-sm">
                           List
                         </span>
                       </label>
                       <label className="relative w-1/3 cursor-pointer">
-                        <input type="radio" name="view" value="grid" className="peer sr-only" />
+                        <input
+                          type="radio"
+                          name="view"
+                          value="grid"
+                          className="peer sr-only"
+                        />
                         <span className="flex justify-center rounded-md py-2 peer-checked:bg-white peer-checked:text-gray-900 peer-checked:shadow-sm">
                           Grid
                         </span>
                       </label>
                       <label className="relative w-1/3 cursor-pointer">
-                        <input type="radio" name="view" value="gallery" className="peer sr-only" />
+                        <input
+                          type="radio"
+                          name="view"
+                          value="gallery"
+                          className="peer sr-only"
+                        />
                         <span className="flex justify-center rounded-md py-2 peer-checked:bg-white peer-checked:text-gray-900 peer-checked:shadow-sm">
                           Gallery
                         </span>
@@ -567,7 +639,11 @@ export default function DesignSystem() {
                         <p className="text-xs text-gray-500">Just now</p>
                       </div>
                     </div>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 rounded-full"
+                    >
                       <X className="h-4 w-4" />
                     </Button>
                   </div>
@@ -577,15 +653,25 @@ export default function DesignSystem() {
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="overflow-hidden border-0 bg-white/60 shadow-lg backdrop-blur-lg">
               <CardContent className="p-0">
                 <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 px-6 py-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
-                        <svg className="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        <svg
+                          className="h-5 w-5 text-purple-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                          />
                         </svg>
                       </div>
                       <div>
@@ -593,7 +679,11 @@ export default function DesignSystem() {
                         <p className="text-xs text-gray-500">5 minutes ago</p>
                       </div>
                     </div>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 rounded-full"
+                    >
                       <X className="h-4 w-4" />
                     </Button>
                   </div>
@@ -601,8 +691,19 @@ export default function DesignSystem() {
                 <div className="px-6 py-4">
                   <p className="mb-4">You have a new message from the team.</p>
                   <div className="flex justify-end space-x-2">
-                    <Button variant="outline" size="sm" className="rounded-full">Dismiss</Button>
-                    <Button size="sm" className="rounded-full bg-blue-500 hover:bg-blue-600">View</Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="rounded-full"
+                    >
+                      Dismiss
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="rounded-full bg-blue-500 hover:bg-blue-600"
+                    >
+                      View
+                    </Button>
                   </div>
                 </div>
               </CardContent>
@@ -644,8 +745,8 @@ export default function DesignSystem() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Our design system is built with accessibility in mind, ensuring
-                  everyone can use our product regardless of ability.
+                  Our design system is built with accessibility in mind,
+                  ensuring everyone can use our product regardless of ability.
                 </p>
               </CardContent>
             </Card>
