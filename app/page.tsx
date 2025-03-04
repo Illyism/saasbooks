@@ -40,7 +40,7 @@ export default function Home() {
                 SaaS metrics your accountant doesn't track.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link href="/signup">
+                <Link href="/auth/login">
                   <Button size="lg" className="group font-medium">
                     Try for Free
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -373,7 +373,7 @@ export default function Home() {
                       <span className="ml-3 text-gray-600">Email support</span>
                     </li>
                   </ul>
-                  <Link href="/signup">
+                  <Link href="/auth/login">
                     <Button className="w-full font-medium">
                       Start 7-Day Free Trial
                     </Button>
@@ -514,19 +514,23 @@ export default function Home() {
                 they don't provide.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link href="/signup">
+                <Link href="/auth/login">
                   <Button size="lg" variant="secondary" className="font-medium">
                     Start 7-Day Free Trial
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/schedule">
+                <Link
+                  href="https://github.com/Illyism/saasbooks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
                     size="lg"
                     variant="outline"
                     className="bg-transparent font-medium text-white hover:bg-white/10 hover:text-white"
                   >
-                    See How It Works
+                    View on GitHub
                   </Button>
                 </Link>
               </div>
