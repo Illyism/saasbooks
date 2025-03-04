@@ -27,6 +27,12 @@ export default async function NavBar() {
                   Dashboard
                 </Link>
                 <Link
+                  href="/dashboard/stripe"
+                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                >
+                  Stripe
+                </Link>
+                <Link
                   href="/app/transactions"
                   className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                 >
@@ -39,7 +45,7 @@ export default async function NavBar() {
                   Metrics
                 </Link>
                 <Link
-                  href="/app/settings"
+                  href="/settings/stripe"
                   className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                 >
                   Settings
