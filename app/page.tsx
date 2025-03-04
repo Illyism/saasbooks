@@ -1,5 +1,15 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Cloud, Github, Key, Phone, Rocket } from 'lucide-react';
+import {
+  AlertCircle,
+  ArrowRight,
+  BarChart,
+  Clock,
+  Cloud,
+  Github,
+  Key,
+  Phone,
+  Rocket,
+} from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -16,22 +26,21 @@ export default function Home() {
                 </span>
                 <span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
                   <Cloud className="mr-1 h-4 w-4" />
-                  Cloud Available
+                  Cloud Ready
                 </span>
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block">Financial clarity for</span>
-                <span className="block text-blue-600">SaaS businesses</span>
+                <span className="block">Financial Data for</span>
+                <span className="block text-blue-600">SaaS Success</span>
               </h1>
               <p className="text-lg text-gray-600">
-                SaaSBooks is a financial management platform that turns your
-                Stripe and Mercury data into actionable insights, helping you
-                make better business decisions.
+                SaaSBooks turns Stripe and Mercury data into insights for
+                accounting, financial planning, and smarter business decisions.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link href="/signup">
                   <Button size="lg" className="group font-medium">
-                    Start Free Trial
+                    Get Started
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
@@ -48,7 +57,7 @@ export default function Home() {
               </div>
               <div className="pt-4">
                 <p className="text-sm text-gray-500">
-                  3-day free trial • Then only $19/mo (500 credits)
+                  3-day free trial • $19/mo (10,000 transactions)
                 </p>
               </div>
             </div>
@@ -56,6 +65,56 @@ export default function Home() {
             <div className="rounded-xl bg-gradient-to-br from-blue-100 to-purple-100 p-8 shadow-lg">
               <div className="flex aspect-video items-center justify-center rounded-lg bg-white shadow-sm">
                 <p className="text-gray-400">Dashboard Preview</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 rounded-xl bg-red-50 p-8">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Why SaaS Founders Need Better Financial Tools
+            </h2>
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="flex items-start">
+                <div className="mr-4 flex-shrink-0 rounded-full bg-red-100 p-2">
+                  <Clock className="h-5 w-5 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-gray-900">
+                    Manual Work Wastes Time
+                  </h3>
+                  <p className="mt-2 text-gray-600">
+                    Combining Stripe and Mercury data for accounting and
+                    reporting takes hours away from growth tasks.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="mr-4 flex-shrink-0 rounded-full bg-red-100 p-2">
+                  <BarChart className="h-5 w-5 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-gray-900">
+                    Data Without Context
+                  </h3>
+                  <p className="mt-2 text-gray-600">
+                    Most dashboards show raw numbers without the financial
+                    context needed for planning.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="mr-4 flex-shrink-0 rounded-full bg-red-100 p-2">
+                  <AlertCircle className="h-5 w-5 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-gray-900">
+                    Accounting Complexity
+                  </h3>
+                  <p className="mt-2 text-gray-600">
+                    SaaS financial management requires specialized tools that
+                    most accounting software lacks.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -68,12 +127,10 @@ export default function Home() {
                     <Cloud className="h-6 w-6 text-blue-600" />
                   </div>
                 </div>
-                <h2 className="mb-4 text-2xl font-bold text-gray-900">
-                  SaaSBooks Cloud
-                </h2>
+                <h2 className="mb-4 text-2xl font-bold text-gray-900">Cloud</h2>
                 <p className="mb-6 text-gray-600">
-                  Get started quickly with our hosted solution. 3-day free
-                  trial, then only $19/mo for 500 credits.
+                  Start in minutes with zero setup. We handle updates and
+                  backups so you focus on accounting and finances.
                 </p>
                 <div className="mt-auto">
                   <Link href="/signup">
@@ -94,11 +151,11 @@ export default function Home() {
                   </div>
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-gray-900">
-                  Use Your Own API Keys
+                  Your API Keys
                 </h2>
                 <p className="mb-6 text-gray-600">
-                  Connect your OpenAI, Anthropic, or Google API keys to use at
-                  cost, just like Cursor.
+                  Keep control of your financial data and reduce costs by using
+                  your own API keys with our platform.
                 </p>
                 <div className="mt-auto">
                   <Link href="/docs/api-keys">
@@ -119,11 +176,11 @@ export default function Home() {
                   </div>
                 </div>
                 <h2 className="mb-4 text-2xl font-bold text-gray-900">
-                  Self-Host for Free
+                  Self-Host
                 </h2>
                 <p className="mb-6 text-gray-600">
-                  Deploy SaaSBooks on your own infrastructure and keep full
-                  control of your financial data.
+                  Deploy on your own servers for maximum security and
+                  customization of your financial management tools.
                 </p>
                 <div className="mt-auto">
                   <Link
@@ -132,7 +189,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                   >
                     <Button variant="outline" className="w-full font-medium">
-                      GitHub Repository
+                      GitHub
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -144,26 +201,24 @@ export default function Home() {
           <div className="mt-24 rounded-xl bg-gray-50 p-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                Choose Your Plan
+                Plans
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-                Whether you need a hosted solution or prefer to self-host,
-                SaaSBooks has options for everyone.
+                Choose how you want to use SaaSBooks for your accounting and
+                financial management.
               </p>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="rounded-lg bg-white p-8 shadow-sm">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-gray-900">
-                    SaaSBooks Cloud
-                  </h3>
+                  <h3 className="text-xl font-bold text-gray-900">Cloud</h3>
                   <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
-                    Recommended
+                    Popular
                   </span>
                 </div>
                 <p className="mt-4 text-gray-600">
-                  Perfect for teams who want a hassle-free setup with all the
-                  features.
+                  Save time with our managed solution for SaaS accounting and
+                  financial management.
                 </p>
                 <div className="mt-6">
                   <p className="text-5xl font-bold text-gray-900">
@@ -173,7 +228,7 @@ export default function Home() {
                     </span>
                   </p>
                   <p className="mt-1 text-sm text-gray-500">
-                    Includes 500 credits per month
+                    10,000 transactions monthly
                   </p>
                 </div>
                 <ul className="mt-6 space-y-4">
@@ -192,24 +247,8 @@ export default function Home() {
                       />
                     </svg>
                     <span className="ml-3 text-gray-600">
-                      Automatic updates
+                      Financial dashboards and reports
                     </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="h-6 w-6 flex-shrink-0 text-green-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-3 text-gray-600">Managed backups</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -226,7 +265,7 @@ export default function Home() {
                       />
                     </svg>
                     <span className="ml-3 text-gray-600">
-                      Use your own API keys (optional)
+                      Accounting data integration
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -243,29 +282,48 @@ export default function Home() {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="ml-3 text-gray-600">Priority support</span>
+                    <span className="ml-3 text-gray-600">
+                      Use your own API keys
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      className="h-6 w-6 flex-shrink-0 text-green-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="ml-3 text-gray-600">Fast support</span>
                   </li>
                 </ul>
                 <div className="mt-8">
                   <Link href="/signup">
                     <Button className="w-full font-medium">
-                      Start 3-Day Free Trial
+                      Start Free Trial
                     </Button>
                   </Link>
+                  <p className="mt-2 text-center text-sm text-gray-500">
+                    No credit card required
+                  </p>
                 </div>
               </div>
 
               <div className="rounded-lg bg-white p-8 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900">Self-Hosted</h3>
                 <p className="mt-4 text-gray-600">
-                  For developers who want complete control over their
-                  deployment.
+                  Full control for teams with specific accounting and financial
+                  data requirements.
                 </p>
                 <div className="mt-6">
                   <p className="text-5xl font-bold text-gray-900">Free</p>
-                  <p className="mt-1 text-sm text-gray-500">
-                    Open-source under MIT license
-                  </p>
+                  <p className="mt-1 text-sm text-gray-500">MIT license</p>
                 </div>
                 <ul className="mt-6 space-y-4">
                   <li className="flex items-start">
@@ -301,7 +359,7 @@ export default function Home() {
                       />
                     </svg>
                     <span className="ml-3 text-gray-600">
-                      Customize to your needs
+                      Customize accounting features
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -319,7 +377,7 @@ export default function Home() {
                       />
                     </svg>
                     <span className="ml-3 text-gray-600">
-                      Use your own API keys
+                      Financial data privacy
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -348,7 +406,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                   >
                     <Button variant="outline" className="w-full font-medium">
-                      View on GitHub
+                      GitHub
                     </Button>
                   </Link>
                 </div>
@@ -363,13 +421,13 @@ export default function Home() {
                   <div className="rounded-full bg-blue-200 p-3">
                     <Rocket className="h-8 w-8 text-blue-600" />
                   </div>
-                  <h2 className="text-3xl font-bold">Get started now</h2>
+                  <h2 className="text-3xl font-bold">Start now</h2>
                   <p className="text-lg">
-                    Sign up to begin using the all-in-one organizer toolkit
+                    Simplify your SaaS accounting and finances
                   </p>
                   <Link href="/signup">
                     <Button variant="black" size="lg">
-                      Sign Up Now
+                      Sign Up
                     </Button>
                   </Link>
                 </div>
@@ -380,9 +438,9 @@ export default function Home() {
                   <div className="rounded-full bg-purple-300 p-3">
                     <Phone className="h-8 w-8 text-purple-700" />
                   </div>
-                  <h2 className="text-3xl font-bold">Talk to a real human</h2>
+                  <h2 className="text-3xl font-bold">Talk to us</h2>
                   <p className="text-lg">
-                    Get the gist of SaaSBooks with a guided demo
+                    See how our financial tools work with a demo
                   </p>
                   <Link href="/schedule">
                     <Button variant="black" size="lg">
