@@ -2,7 +2,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getCurrentSession } from '@/lib/auth';
 import { prisma } from '@/lib/db';
-import { DeleteStripeAccountButton, StripeAccountForm } from '@/lib/stripe/components';
+import {
+  DeleteStripeAccountButton,
+  StripeAccountForm,
+} from '@/lib/stripe/components';
 import { StripeAccount } from '@prisma/client';
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -30,7 +33,9 @@ export default async function StripeSettingsPage() {
       {/* Header */}
       <div className="mb-8 text-center">
         <h1 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">
-          {hasStripeAccounts ? 'Manage Stripe Accounts' : 'Connect Stripe to SaaSBooks'}
+          {hasStripeAccounts
+            ? 'Manage Stripe Accounts'
+            : 'Connect Stripe to SaaSBooks'}
         </h1>
         <p className="mx-auto max-w-2xl text-gray-500">
           {hasStripeAccounts
@@ -44,15 +49,22 @@ export default async function StripeSettingsPage() {
           {/* Existing Accounts */}
           <div className="mb-8">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-gray-900">Your Stripe Accounts</h2>
+              <h2 className="text-xl font-semibold text-gray-900">
+                Your Stripe Accounts
+              </h2>
               <Link href="/dashboard/stripe">
-                <Button variant="outline" size="sm">View Dashboard</Button>
+                <Button variant="outline" size="sm">
+                  View Dashboard
+                </Button>
               </Link>
             </div>
 
             <div className="space-y-4">
               {user.stripeAccounts.map((account: StripeAccount) => (
-                <div key={account.id} className="overflow-hidden rounded-lg border bg-white shadow">
+                <div
+                  key={account.id}
+                  className="overflow-hidden rounded-lg border bg-white shadow"
+                >
                   <div className="flex items-center border-b p-4">
                     <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
                       <svg
@@ -72,27 +84,41 @@ export default async function StripeSettingsPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center">
-                        <h3 className="font-medium text-gray-900">{account.name}</h3>
-                        <Badge className="ml-2" variant="outline">Connected</Badge>
+                        <h3 className="font-medium text-gray-900">
+                          {account.name}
+                        </h3>
+                        <Badge className="ml-2" variant="outline">
+                          Connected
+                        </Badge>
                       </div>
                       {account.businessName && (
-                        <p className="text-sm text-gray-500">{account.businessName}</p>
+                        <p className="text-sm text-gray-500">
+                          {account.businessName}
+                        </p>
                       )}
                     </div>
                     <div className="text-sm text-gray-500">
-                      Connected {new Date(account.createdAt).toLocaleDateString()}
+                      Connected{' '}
+                      {new Date(account.createdAt).toLocaleDateString()}
                     </div>
                   </div>
                   <div className="flex items-center justify-between bg-gray-50 p-3">
-                    <span className="text-sm text-gray-500">Financial metrics and accounting data</span>
+                    <span className="text-sm text-gray-500">
+                      Financial metrics and accounting data
+                    </span>
                     <div className="flex items-center space-x-2">
-                      <DeleteStripeAccountButton 
-                        accountId={account.id} 
-                        userId={user.id.toString()} 
+                      <DeleteStripeAccountButton
+                        accountId={account.id}
+                        userId={user.id.toString()}
                         accountName={account.name}
                       />
                       <Link href="/dashboard/stripe">
-                        <Button size="sm" className="bg-blue-600 hover:bg-blue-700">View Data</Button>
+                        <Button
+                          size="sm"
+                          className="bg-blue-600 hover:bg-blue-700"
+                        >
+                          View Data
+                        </Button>
                       </Link>
                     </div>
                   </div>
@@ -103,8 +129,12 @@ export default async function StripeSettingsPage() {
 
           {/* Add New Account */}
           <div className="rounded-lg border bg-white p-6 shadow">
-            <h2 className="mb-4 text-xl font-semibold text-gray-900">Add Another Stripe Account</h2>
-            <p className="mb-6 text-gray-500">Connect another Stripe account with the steps below:</p>
+            <h2 className="mb-4 text-xl font-semibold text-gray-900">
+              Add Another Stripe Account
+            </h2>
+            <p className="mb-6 text-gray-500">
+              Connect another Stripe account with the steps below:
+            </p>
             <ConnectStripeFlow userId={user.id.toString()} />
           </div>
         </>
@@ -112,7 +142,10 @@ export default async function StripeSettingsPage() {
         <div className="overflow-hidden rounded-lg border bg-white shadow">
           <div className="p-6">
             <div className="mx-auto max-w-2xl">
-              <ConnectStripeFlow userId={user.id.toString()} isFirstAccount={true} />
+              <ConnectStripeFlow
+                userId={user.id.toString()}
+                isFirstAccount={true}
+              />
             </div>
           </div>
         </div>
@@ -141,7 +174,9 @@ function ConnectStripeFlow({
             1
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="text-lg font-medium text-gray-900">Generate API Key</h3>
+            <h3 className="text-lg font-medium text-gray-900">
+              Generate API Key
+            </h3>
             <p className="mt-1 text-sm text-gray-500">
               Create a secure read-only key for your accounting data.
             </p>
@@ -170,8 +205,13 @@ function ConnectStripeFlow({
               </a>
             </div>
             <div className="mt-3 rounded-md bg-blue-50 p-3 text-sm text-blue-700">
-              <p className="font-medium">Access to revenue, subscriptions, fees, and payment data</p>
-              <p className="mt-2">IMPORTANT: Ensure all permissions remain selected on the Stripe page.</p>
+              <p className="font-medium">
+                Access to revenue, subscriptions, fees, and payment data
+              </p>
+              <p className="mt-2">
+                IMPORTANT: Ensure all permissions remain selected on the Stripe
+                page.
+              </p>
             </div>
           </div>
         </div>
@@ -190,7 +230,8 @@ function ConnectStripeFlow({
           <div className="min-w-0 flex-1">
             <h3 className="text-lg font-medium text-gray-900">Copy Your Key</h3>
             <p className="mt-1 text-sm text-gray-500">
-              Copy the entire key (shown only once) that starts with "rk_live_..." or "sk_live_...".
+              Copy the entire key (shown only once) that starts with
+              "rk_live_..." or "sk_live_...".
             </p>
           </div>
         </div>
@@ -203,7 +244,9 @@ function ConnectStripeFlow({
             3
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="text-lg font-medium text-gray-900">Connect Account</h3>
+            <h3 className="text-lg font-medium text-gray-900">
+              Connect Account
+            </h3>
             <p className="mt-1 text-sm text-gray-500">
               Paste your key below to enable financial reports and data access.
             </p>

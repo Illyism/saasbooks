@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const sessionToken = request.cookies.get('session_token')?.value;
 
   // If not authenticated and trying to access a protected route under /app
@@ -18,3 +18,4 @@ export const config = {
     '/app/:path*',
   ],
 };
+

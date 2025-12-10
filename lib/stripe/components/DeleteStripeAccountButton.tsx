@@ -35,7 +35,7 @@ export function DeleteStripeAccountButton({
       setIsDeleting(true);
       await deleteStripeAccount(accountId, userId);
       setOpen(false);
-      
+
       // Refresh the page to show updated list
       window.location.reload();
     } catch (error) {
@@ -48,7 +48,11 @@ export function DeleteStripeAccountButton({
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
-        <Button variant="outline" size="icon" className="h-8 w-8 text-red-500 border-red-200">
+        <Button
+          variant="outline"
+          size="icon"
+          className="h-8 w-8 border-red-200 text-red-500"
+        >
           <Trash2 className="h-4 w-4" />
         </Button>
       </AlertDialogTrigger>
@@ -56,9 +60,12 @@ export function DeleteStripeAccountButton({
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Stripe Connection</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to remove the connection to <span className="font-medium">{accountName}</span>?
+            Are you sure you want to remove the connection to{' '}
+            <span className="font-medium">{accountName}</span>?
             <p className="mt-2">
-              This will only remove the connection between SaaSBooks and your Stripe account. Your Stripe account and data will remain untouched.
+              This will only remove the connection between SaaSBooks and your
+              Stripe account. Your Stripe account and data will remain
+              untouched.
             </p>
           </AlertDialogDescription>
         </AlertDialogHeader>

@@ -63,14 +63,15 @@ export function StripeAccountForm({
         window.location.reload();
       }, 2000);
     } catch (err) {
-      let errorMessage = 
+      let errorMessage =
         err instanceof Error ? err.message : 'Failed to add Stripe account';
-      
+
       // Add helpful message for common permission errors
       if (errorMessage.includes('does not have the required permissions')) {
-        errorMessage = 'Your Stripe API key is missing required permissions. Please generate a new key with all necessary permissions, especially "Balance transaction source read" (rak_balance_transaction_source_read).';
+        errorMessage =
+          'Your Stripe API key is missing required permissions. Please generate a new key with all necessary permissions, especially "Balance transaction source read" (rak_balance_transaction_source_read).';
       }
-      
+
       setError(errorMessage);
     } finally {
       setIsLoading(false);

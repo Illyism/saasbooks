@@ -22,6 +22,8 @@ export async function getUserStripeAccounts(
   return accounts.map(account => ({
     ...account,
     apiKey: '•••••••••••••••••••••', // Hide actual key
+    businessName: account.businessName ?? undefined,
+    metadata: account.metadata ? JSON.parse(account.metadata) : undefined,
   }));
 }
 
@@ -45,6 +47,8 @@ export async function getStripeAccountWithKey(
   return {
     ...account,
     apiKey: decryptedKey,
+    businessName: account.businessName ?? undefined,
+    metadata: account.metadata ? JSON.parse(account.metadata) : undefined,
   };
 }
 
@@ -82,6 +86,8 @@ export async function addStripeAccount(
   return {
     ...account,
     apiKey: '•••••••••••••••••••••', // Hide actual key in response
+    businessName: account.businessName ?? undefined,
+    metadata: account.metadata ? JSON.parse(account.metadata) : undefined,
   };
 }
 
@@ -92,7 +98,7 @@ export async function updateStripeAccount(
   data: Partial<StripeAccount>
 ): Promise<StripeAccount> {
   // If updating API key, verify and encrypt it
-  const updateData: Partial<StripeAccount> = { ...data };
+  const updateData: Record<string, unknown> = { ...data };
 
   if (data.apiKey) {
     const isValid = await verifyApiKey(data.apiKey);
@@ -108,6 +114,14 @@ export async function updateStripeAccount(
     updateData.apiKey = encryptData(data.apiKey);
     updateData.stripeAccountId = accountInfo.stripeAccountId;
     updateData.businessName = accountInfo.businessName;
+  }
+
+  // Handle metadata serialization if present
+  if (updateData.metadata !== undefined) {
+    updateData.metadata =
+      updateData.metadata === null
+        ? null
+        : JSON.stringify(updateData.metadata);
   }
 
   // Remove fields that shouldn't be updated directly
@@ -127,6 +141,8 @@ export async function updateStripeAccount(
   return {
     ...account,
     apiKey: '•••••••••••••••••••••', // Hide actual key in response
+    businessName: account.businessName ?? undefined,
+    metadata: account.metadata ? JSON.parse(account.metadata) : undefined,
   };
 }
 

@@ -50,7 +50,7 @@ export async function getBalanceTransactions(
       fee: tx.fee,
       net: tx.net,
       reportingCategory: tx.reporting_category,
-      status: tx.status,
+      status: tx.status as 'available' | 'pending',
       type: tx.type,
       source: typeof tx.source === 'string' ? tx.source : tx.source?.id,
     }));
