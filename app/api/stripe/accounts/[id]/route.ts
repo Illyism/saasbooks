@@ -8,7 +8,7 @@ import {
 // Update a Stripe account
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { user } = await getCurrentSession();
 
@@ -18,7 +18,7 @@ export async function PATCH(
 
   try {
     const data = await req.json();
-    const { id } = params;
+    const { id } = await params;
 
     const account = await updateStripeAccount(id, user.id.toString(), data);
 
@@ -36,7 +36,7 @@ export async function PATCH(
 // Delete a Stripe account
 export async function DELETE(
   _req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { user } = await getCurrentSession();
 
@@ -45,7 +45,7 @@ export async function DELETE(
   }
 
   try {
-    const { id } = params;
+    const { id } = await params;
 
     await deleteStripeAccount(id, user.id.toString());
 
