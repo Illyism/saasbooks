@@ -11,6 +11,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Connect Stripe - SaaSBooks',
   description: 'Connect your Stripe account to SaaSBooks',

@@ -5,6 +5,8 @@ import { prisma } from '@/lib/db';
 import Link from 'next/link';
 import { GrossVolumeManager } from './gross-volume-manager';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Stripe Dashboard - SaaSBooks',
   description: 'View your financial data from Stripe',
