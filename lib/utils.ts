@@ -1,10 +1,6 @@
-import { type ClassValue, clsx } from 'clsx';
 import crypto from 'crypto';
-import { twMerge } from 'tailwind-merge';
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+export { cn } from 'cn';
 
 const ENCRYPTION_KEY =
   process.env.ENCRYPTION_KEY || 'default-key-32-bytes-production!'; // Must be exactly 32 bytes for AES-256
