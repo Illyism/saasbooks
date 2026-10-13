@@ -102,8 +102,8 @@ SaaSBooks focuses on financial clarity for founders, not comprehensive accountin
 
 When you're ready for formal accounting software, we recommend:
 
-- [QuickBooks Online](https://go.il.ly/quickbooks) - Best for US-based businesses
-- [Xero](https://go.il.ly/xero) - Great international support
+- [QuickBooks Online](https://quickbooks.intuit.com/?ref=illy) - Best for US-based businesses
+- [Xero](https://www.xero.com/?ref=illy) - Great international support
 
 _Note: These are affiliate links that help support SaaSBooks development._
 
